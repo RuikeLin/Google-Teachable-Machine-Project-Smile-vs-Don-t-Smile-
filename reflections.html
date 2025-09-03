@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teachable Machine Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
+</head>
+<body>
+  <header>
+    <!-- Main heading of the About Us page -->
+    <h1>LIS 500 Teachable Machine Project:Smile vs. don't smile </h1>
+    <nav>
+      <li><a href="index.html">home</a></li>
+      <li><a href="reflections.html">Reflections</a></li>
+      <li><a href="machine.html">our machine </a></li>
+    </nav>
+  </header>
+
+
+    <main>
+    <!-- Project introduction section -->
+      <div class="section">
+        <h2>Introduction</h2>
+        <p>
+          In this project, we created a browser-based image classifier that detects whether a person is smiling or not. Using Google’s Teachable Machine, we trained a model to recognize two categories—“Smile” and “Neutral”—based on images we provided. Then, we embedded the model into a webpage where it can respond in real-time using a webcam.
+        </p>
+        <p>
+          This project is a web-based application that uses Teachable Machine to classify images of people's faces as either smiling or not smiling. The application is built using HTML, CSS, and JavaScript, and it uses the Teachable Machine API to train a machine learning model to recognize the difference between smiling and non-smiling faces.
+        </p>
+        <p>
+          At first glance, this felt like a light, even fun project. But as we worked through it, we realized that training a machine to recognize expressions isn't just a technical challenge—it also raises questions about interpretation, fairness, and accuracy. What is a smile, and who gets to define it? Can a model trained on just our faces make accurate judgments about others?
+        </p>
+        <p>
+          Our project connects closely with themes in <i>Unmasking AI</i> by Joy Buolamwini. She reveals how biased training data can lead to serious misjudgments in facial recognition systems, especially for people who are not well represented in the datasets. Although our project is small and informal, we still saw moments where lighting, face shape, or expression subtlety affected the model’s response. These moments reminded us that even the simplest AI models carry assumptions—and that training data is never neutral.
+        </p>
+        <p>
+          By building and testing this model, we not only explored how machine learning works, but also reflected on its risks and responsibilities. A smile might be universal, but a machine’s understanding of it is not.
+        </p>
+      <!-- Training example images -->
+        <div class="image-gallery" style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+            <img src="1.png" alt="Training Image 1" style="max-width: 45%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="2.jpeg" alt="Training Image 2" style="max-width: 45%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      </div>  
+
+    </div> <!-- This ends the image gallery -->
+
+    <!-- Project introduction video -->
+    <div style="text-align: center; margin-top: 30px;">
+      <video width="720" controls>
+        <source src="introduce.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 10px; font-style: italic;">Watch our short video explaining the project!</p>
+    </div>
+        
+        </div>
+      </div>
+    <!-- Reflection section with student voices -->
+      <div class="section">
+        <h2 style="margin-bottom: 20px">Reflection: Lessons from <i>Unmasking AI</i></h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div class="reflection-container">
+          <!-- Left Column: Ruike Lin -->
+          <div style="flex: 1; min-width: 300px; max-width: 45%; background-color: #fdfdfd; border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+            <h3>Ruike Lin</h3>
+            <p>
+              One of the most powerful lessons from <i>Unmasking AI</i> that resonated with us during this assignment is the idea that “code is not neutral.” Joy Buolamwini’s work reveals how AI systems—especially facial recognition technologies—often fail to serve people equally, particularly those from marginalized communities. Her personal experience of not being detected by a facial recognition system until she wore a white mask exposed how biased datasets can lead to exclusion and misjudgment.
+            </p>
+            <p>
+              While our smile classifier may seem like a lighthearted project, it reminded us of deeper ethical concerns. As we trained our model using our own facial expressions, we realized how lighting conditions, skin tone, and even camera quality could influence the results. For instance, during testing, we found that the model struggled to correctly classify “smile” when one group member was in a dimly lit room—even though they were smiling clearly. This reminded us of a real-life situation where motion-sensor soap dispensers in public bathrooms often fail to recognize darker skin tones, highlighting how overlooked design decisions can lead to exclusion in everyday tools.
+            </p>
+            <p>
+              Another relatable example comes from photo apps like Snapchat or Instagram filters. Some filters lighten users’ skin or apply beautification features based on biased assumptions of what’s attractive—usually trained on limited datasets. These subtle algorithmic choices reflect broader societal preferences and raise the same concerns Buolamwini discusses: Who gets to define what is “normal,” “beautiful,” or in our case, “smiling”?
+            </p>
+          </div>
+      
+          <!-- Right Column: Yunning Zhang -->
+          <div style="flex: 1; min-width: 300px; max-width: 45%; background-color: #fdfdfd; border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+            <h3>Yunning Zhang</h3>
+            <p>
+              Working on this project made me realize that smiling is not as simple as I used to think. When we were taking photos for training, we kept asking ourselves whether a certain expression really counted as a smile. Some were easy to label, like when we were clearly grinning. But others were less obvious, like a small polite smile or when someone smiles with their eyes more than their mouth. The model often got confused with those subtle cases.
+            </p>
+            <p>
+              This reminded me of what Joy Buolamwini wrote in <i>Unmasking AI</i>. Machines are trained to make decisions based on what they have seen before, but what they have seen is often very limited. If a model learns that only big, clear smiles count as positive, then anyone who smiles differently might be misclassified or missed completely. That could be a problem in real situations where emotional understanding matters, like in education, healthcare, or hiring.
+            </p>
+            <p>
+              It also made me think about how biased the idea of a “normal smile” can be. In different cultures, people express happiness in different ways. Some people naturally have a more neutral face even when they are feeling fine. A machine won’t know that. It just reacts to patterns in the data. Buolamwini called this problem “the coded gaze,” and I started to see it in our own experiment. Even though our project was small, the model we trained already had blind spots. It made confident guesses based on very little information.
+            </p>
+            <p>
+              In the end, teaching a machine to recognize a smile is not just about labels and pixels. It’s about deciding what version of human emotion the machine will learn and repeat. That’s a decision we have to think about carefully.
+            </p>
+          </div>
+      
+        </div>
+       
+        <div>
+            <h3> AI and Human Creativity</h3>
+            <p>
+              The ABC documentary <cite>AI vs Human: The Creativity Experiment</cite> raised questions about how AI systems learn and whether they can truly
+              be creative. Our Teachable Machine model demonstrates both the power and limitations of machine learning—it can recognize patterns
+              (smiles vs. neutral expressions) but lacks a true understanding of human emotion.
+            </p>
+            <p>
+              The model operates within a binary framework we imposed, ignoring the complexity and cultural specificity of facial expressions.
+              This reduction of human experience to binary categories mirrors issues discussed in Kyle Booten's work on "#AllLivesMatter"
+              and the production of post-racial affect, where complex social realities are flattened into simplistic frameworks.
+            </p>
+          </div>
+        
+      </div>
+   <!-- Reflection 3: Technical Limitations -->
+   <div>
+    <h3>Technical Limitations</h3>
+    <p>
+      Our model's accuracy varies significantly based on:
+    </p>
+    <ul>
+      <li>Lighting conditions (performs better in well-lit environments)</li>
+      <li>Camera quality and positioning</li>
+      <li>Cultural variations in smiling expressions</li>
+      <li>Facial accessories like glasses or masks</li>
+    </ul>
+    <p>
+      These limitations reveal how AI systems often presume ideal conditions that don't reflect the diversity of real-world environments, 
+      reinforcing the concerns raised in <cite>Coded Bias</cite> about how algorithmic systems can exclude marginalized communities.
+    </p>
+  </div>
+
+  <!-- Reflection 4: Ethical Considerations -->
+  <div>
+    <h3>Ethical Considerations</h3>
+    <p>
+      Building this project raised important ethical questions:
+    </p>
+    <ul>
+      <li>Who benefits from emotion recognition technology?</li>
+      <li>What happens when facial analysis is used without consent?</li>
+      <li>How might companies use this data to manipulate consumers?</li>
+      <li>What are the privacy implications of facial data collection?</li>
+    </ul>
+    <p>
+      These questions connect to broader discussions from <cite>Coded Bias</cite> about surveillance capitalism and the commodification of
+      personal data. Even our simple smile detection model demonstrates how easily facial data can be collected and analyzed,
+      raising concerns about more sophisticated commercial applications.
+    </p>
+  </div>
+</div>
+</main>
